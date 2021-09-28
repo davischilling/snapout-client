@@ -1,0 +1,40 @@
+{
+  "files": {
+    "static/js/0.ac1f6209.chunk.js": "/snapout-client/static/js/0.ac1f6209.chunk.js",
+    "static/js/0.ac1f6209.chunk.js.map": "/snapout-client/static/js/0.ac1f6209.chunk.js.map",
+    "main.css": "/snapout-client/static/css/main.d3385483.chunk.css",
+    "main.js": "/snapout-client/static/js/main.10d84cc3.chunk.js",
+    "main.js.map": "/snapout-client/static/js/main.10d84cc3.chunk.js.map",
+    "runtime-main.js": "/snapout-client/static/js/runtime-main.1052473c.js",
+    "runtime-main.js.map": "/snapout-client/static/js/runtime-main.1052473c.js.map",
+    "static/js/3.82cc0bf9.chunk.js": "/snapout-client/static/js/3.82cc0bf9.chunk.js",
+    "static/js/3.82cc0bf9.chunk.js.map": "/snapout-client/static/js/3.82cc0bf9.chunk.js.map",
+    "static/css/4.bded3b46.chunk.css": "/snapout-client/static/css/4.bded3b46.chunk.css",
+    "static/js/4.5cbfb945.chunk.js": "/snapout-client/static/js/4.5cbfb945.chunk.js",
+    "static/js/4.5cbfb945.chunk.js.map": "/snapout-client/static/js/4.5cbfb945.chunk.js.map",
+    "static/js/5.f3df81c2.chunk.js": "/snapout-client/static/js/5.f3df81c2.chunk.js",
+    "static/js/5.f3df81c2.chunk.js.map": "/snapout-client/static/js/5.f3df81c2.chunk.js.map",
+    "static/js/6.3e700cd9.chunk.js": "/snapout-client/static/js/6.3e700cd9.chunk.js",
+    "static/js/6.3e700cd9.chunk.js.map": "/snapout-client/static/js/6.3e700cd9.chunk.js.map",
+    "static/js/7.606a3a3b.chunk.js": "/snapout-client/static/js/7.606a3a3b.chunk.js",
+    "static/js/7.606a3a3b.chunk.js.map": "/snapout-client/static/js/7.606a3a3b.chunk.js.map",
+    "static/js/8.1296b08b.chunk.js": "/snapout-client/static/js/8.1296b08b.chunk.js",
+    "static/js/8.1296b08b.chunk.js.map": "/snapout-client/static/js/8.1296b08b.chunk.js.map",
+    "static/js/9.51c7dbbc.chunk.js": "/snapout-client/static/js/9.51c7dbbc.chunk.js",
+    "static/js/9.51c7dbbc.chunk.js.map": "/snapout-client/static/js/9.51c7dbbc.chunk.js.map",
+    "static/js/10.68f3bc7b.chunk.js": "/snapout-client/static/js/10.68f3bc7b.chunk.js",
+    "static/js/10.68f3bc7b.chunk.js.map": "/snapout-client/static/js/10.68f3bc7b.chunk.js.map",
+    "index.html": "/snapout-client/index.html",
+    "service-worker.js": "/snapout-client/service-worker.js",
+    "service-worker.js.map": "/snapout-client/service-worker.js.map",
+    "static/css/4.bded3b46.chunk.css.map": "/snapout-client/static/css/4.bded3b46.chunk.css.map",
+    "static/css/main.d3385483.chunk.css.map": "/snapout-client/static/css/main.d3385483.chunk.css.map",
+    "static/js/3.82cc0bf9.chunk.js.LICENSE.txt": "/snapout-client/static/js/3.82cc0bf9.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1052473c.js",
+    "static/js/3.82cc0bf9.chunk.js",
+    "static/css/main.d3385483.chunk.css",
+    "static/js/main.10d84cc3.chunk.js"
+  ]
+}
