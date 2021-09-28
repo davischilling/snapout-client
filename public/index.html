@@ -2,39 +2,94 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta name="description" content="Web site created using create-react-app" />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+    <title>Snap-Out/ Rock indie italiano</title>
+    <meta name="description" content="Gruppo rock indie italiano, hanno tra i 14 ed i 18 anni, si sono conosciuti  alle elementari e da allora suonano insieme. Studiano musica da 7 anni e nonostante la loro giovanissima età posseggono tecnica e competenze musicali di veri musicisti professionisti." />
+    <meta name="author" content="Davi Schilling / Full-Stack Developer, Rome" />
+    <meta name="keywords" content="Snap-Out, Rock, indie, italiano, musician, band, musicians, blog, music, music industry" />
+    <meta charSet="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="mask-icon" href="safari-pinned-tab.svg" color="#e21f2f" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#e21f2f" />
+
+    <PreloadImage
+    src="img/svg/logo-snap-out.svg?size=119x29"
+    lazy
+    />
+
+    <PreloadImage
+      src="img/slider/musician-music-band-slide-01-small.png?size=345x477"
+      lazy
+    />
+
+    <link
+      as="style"
+      rel="stylesheet preload prefetch"
+      href="https://fonts.googleapis.com/css?family=Poppins:400,300,500,600&amp;subset=latin,latin-ext&display=swap"
+      type="text/css"
+      crossOrigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="fonts/font-awesome/css/font-awesome.min.css" type="text/css" defer />
+
+    <!-- CSS  Required Files -->
+    <link rel="stylesheet" href="masterslider/style/masterslider.min.css" defer><!-- Master slider main style -->
+    <link rel="stylesheet" href="masterslider/skins/default/style.min.css" defer><!-- Master slider default skin -->
+    <link rel="stylesheet" href="owl-carousel/owl.carousel.min.css"/><!-- Owl carousel -->
+    <link rel='stylesheet' href="css/hamburgers.css" defer> <!-- Custom hamburger menu -->
+
+    <!-- Magnific popup plugin -->
+    <link rel="stylesheet" href="css/magnific-popup.css" defer><!-- newsletter popup and popup gallery -->
+
+    <!-- CSS Default Files -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" defer>
+    <link rel="stylesheet" href="css/animate.css" defer>
+    <link rel="stylesheet" href="css/style.css" defer>
+    <link rel="stylesheet" href="css/color-red.css" defer>
+    <link rel="stylesheet" href="css/responsive.css" defer>
+
     <title>React App</title>
   </head>
-  <body>
+  <body class="dark-theme music-band">
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+    <!-- Required js scripts -->
+    <script src="js/jquery-core.js" defer></script><!-- jQuery library  - must be included in all HTML files -->
+    <script src="bootstrap/js/bootstrap.min.js" defer></script><!-- Bootstrap script - must be included in all HTML files -->
+    <script src="js/jquery-scripts.js" defer></script><!-- Additional scripts - must be included in all HTML files -->
+    <script src="js/jquery.magnific-popup.min.js" defer></script><!-- used for image lightbox and newsletter -->
+    <script src="masterslider/masterslider.min.js" defer></script><!-- Master slider main js -->
+    <script src="owl-carousel/owl.carousel.min.js" defer></script><!-- Carousels script -->
+    <script src="js/volcanno.include.js" defer></script><!-- Custom jQuery functions - must be includeed in all HTML files -->
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+    <script>
+      /* <![CDATA[ */
+      jQuery(document).ready(function ($) {
+          'use strict';
+
+          // MASTER SLIDER START
+          VolcannoInclude.masterSliderInit("masterslider-band");
+
+          // INCLUDE LATEST PORTFOLIO CAROUSEL
+          VolcannoInclude.owlCarouselInit('latest-portfolio-carousel');
+
+          // INCLUDE LATEST POSTS CAROUSEL
+          VolcannoInclude.owlCarouselInit('latest-posts-carousel-03');
+
+          // FOOTER NEWSLETTER
+          VolcannoInclude.magnificPopupInit('newsletter-popup');
+
+          // AUDIO POPUP
+          VolcannoInclude.magnificPopupInit('audio-popup');
+      });
+      /* ]]> */
+    </script>
   </body>
 </html>

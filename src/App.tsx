@@ -1,25 +1,42 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from 'react';
+import { ErrorBoundary } from './components';
+import {
+  AppProvider,
+  MenuProvider
+} from './contexts';
+import { RoutingHook } from './hooks';
+import routes from './routes/routes';
+import Layout from './themes/Layout';
+import './styles/styles.css';
+import './styles/slider.css';
+import { useLocation } from 'react-router-dom'
 
 function App() {
+  const location = useLocation();
+  const [menuActive, setMenuActive] = useState(true)
+
+  useEffect(() => {
+    onRouteChange();
+  }, [location.pathname]);
+
+  async function onRouteChange() {
+    if (location.pathname === '/' && !menuActive) {
+      setMenuActive(true)
+    } else if (location.pathname !== '/')  {
+      setMenuActive(false)
+    };
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    // <ErrorBoundary>
+        <AppProvider>
+          <MenuProvider>
+            <Layout menuActive={menuActive} >
+              <RoutingHook routes={routes.notLogged} />
+            </Layout>
+          </MenuProvider>
+        </AppProvider>
+    // </ErrorBoundary>
   );
 }
 
