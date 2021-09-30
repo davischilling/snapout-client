@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 
 type propTypes = {
   text: string
@@ -13,21 +13,30 @@ const Fader = ({ text, timer, textStyle, color, fadeOut, toggleFadeOut }: propTy
   const [fadeText, setFadeText] = useState({
     fade: 'fade-out-fader'
   })
-  useEffect(() => {
-    if (fadeText.fade === 'fade-in-fader') {
-      setFadeText({
-        fade: 'fade-out-fader'
-      })
-      toggleFadeOut()
-    } else {
-      const timeOut = setInterval(() => {
+
+  const fadeOutLogic = useCallback(
+    () => {
+      if (fadeText.fade === 'fade-in-fader') {
         setFadeText({
-          fade: 'fade-in-fader'
+          fade: 'fade-out-fader'
         })
-      }, timer)
-      return () => clearInterval(timeOut)
-    }
-  }, [fadeOut, fadeText.fade, timer, toggleFadeOut])
+        toggleFadeOut()
+      } else {
+        const timeOut = setInterval(() => {
+          setFadeText({
+            fade: 'fade-in-fader'
+          })
+        }, timer)
+        return () => clearInterval(timeOut)
+      }
+    },
+    [fadeText.fade, timer, toggleFadeOut],
+  )
+
+  useEffect(() => {
+    fadeOutLogic()
+    // eslint-disable-next-line
+  }, [fadeOut])
 
   return (
     <div style={{ textAlign: 'center', display: 'block' }}>

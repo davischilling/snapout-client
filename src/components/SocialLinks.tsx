@@ -16,7 +16,7 @@ export const SocialLinks = ({
     {
       socials.map(({ url, icon }: social) => (
         <li key={`${url}-${icon}`}>
-            <a target="_blank" rel="noreferrer" href={url} className={icon} style={{ display: 'none' }}>Social link</a>
+            <a target="_blank" rel="noreferrer" href={url} className={icon}  > </a>
         </li>
       ))
     }
