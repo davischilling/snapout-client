@@ -27,7 +27,7 @@ export const MainNavLinks = ({ items }: props) => {
           items.map(({ itemClasses, hasChildren, name, children, noChildrenUrl }: item ) => (
             hasChildren ? (
               <li key={name} className={`menu-item-has-children dropdown ${itemClasses}`}>
-                <a href="#" data-toggle="dropdown" className="dropdown-toggle" role="button">{name}</a>
+                <a href="/" data-toggle="dropdown" className="dropdown-toggle" role="button">{name}</a>
                 <ul className="dropdown-menu">
                   {
                     children!.map(({ url, childName }: child) => (

@@ -16,16 +16,16 @@ function App() {
   const [menuActive, setMenuActive] = useState(true)
 
   useEffect(() => {
+    async function onRouteChange() {
+      if (location.pathname === '/' && !menuActive) {
+        setMenuActive(true)
+      } else if (location.pathname !== '/')  {
+        setMenuActive(false)
+      };
+    }
     onRouteChange();
-  }, [location.pathname, onRouteChange]);
+  }, [location.pathname, menuActive]);
 
-  async function onRouteChange() {
-    if (location.pathname === '/' && !menuActive) {
-      setMenuActive(true)
-    } else if (location.pathname !== '/')  {
-      setMenuActive(false)
-    };
-  }
 
   return (
     <ErrorBoundary>

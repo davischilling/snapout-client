@@ -48,7 +48,7 @@ const VideoGridSection = () => {
             <br/>
             <PageTitle
                 title={sectionTitle ? sectionTitle : ''}
-                style={"01"}
+                pageStyle={"01"}
                 pageTitle={"01"}
             />
             <PageContent>

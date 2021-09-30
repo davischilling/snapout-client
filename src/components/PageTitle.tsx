@@ -3,12 +3,12 @@ import React from 'react'
 type props = {
   title: string
   subtitle?: string
-  style: string
+  pageStyle: string
   pageTitle: string
 }
 
-export const PageTitle = ({ title, subtitle, style, pageTitle }: props) =>
-<div className={`page-title page-title-style-${style} page-title-${pageTitle}`}>
+export const PageTitle = ({ title, subtitle, pageStyle, pageTitle }: props) =>
+<div className={`page-title page-title-style-${pageStyle} page-title-${pageTitle}`}>
   <div className="container">
       <div className="row">
           <div className="col-md-12">

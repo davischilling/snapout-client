@@ -27,7 +27,7 @@ const Fader = ({ text, timer, textStyle, color, fadeOut, toggleFadeOut }: propTy
       }, timer)
       return () => clearInterval(timeOut)
     }
-  }, [fadeOut])
+  }, [fadeOut, fadeText.fade, timer, toggleFadeOut])
 
   return (
     <div style={{ textAlign: 'center', display: 'block' }}>

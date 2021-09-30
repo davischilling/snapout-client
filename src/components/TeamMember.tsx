@@ -16,7 +16,6 @@ export const TeamMember = ({
     <div className="col-md-3 col-sm-6 col-xs-12 mb-0 centered">
       <div className="team-member triggerAnimation animated" data-animate="fadeInUp" style={{ marginBottom: 20 }}>
         <Link to={`${memberUrlPage}-${id}`}>
-          <a>
             <LazyLoadImage
               alt={alt}
               width={262}
@@ -28,7 +27,6 @@ export const TeamMember = ({
               {name}
             </h2>
             <span>{role}</span>
-          </a>
         </Link>
       </div>
     </div>

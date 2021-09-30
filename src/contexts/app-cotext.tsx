@@ -58,7 +58,7 @@ export const AppProvider = ({children}: AppProviderProps) => {
     dataKeys.forEach(key => promiseArray.push(api.get(key)))
     fetchData(promiseArray, dataKeys)
     setLoading(false)
-  }, [])
+  }, [data])
 
   return (
     <AppContext.Provider

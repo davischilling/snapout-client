@@ -51,6 +51,7 @@ export const DiscItem = ({
 
             <div id={audioId} className="audio-popup mfp-hide">
                 <iframe
+                    title={audioUrl}
                     width="100%"
                     height="300"
                     scrolling="no"

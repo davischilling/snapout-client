@@ -11,22 +11,21 @@ import api from '../services/api'
 export const Member = () => {
 
   const location = useLocation();
-  const fetchMember = async () => {
-    try {
-      const id = location.pathname.split('-')[2]
-      const { data } = await api.get(`/members/${id}`)
-      setMember(data);
-      console.log(data);
-
-    } catch(err) {
-      console.log(err);
-    }
-  }
 
   const [member, setMember] = useState<MemberType | undefined>()
   useEffect(() => {
-    fetchMember()
-  }, [fetchMember])
+    (async () => {
+      try {
+        const id = location.pathname.split('-')[2]
+        const { data } = await api.get(`/members/${id}`)
+        setMember(data);
+        console.log(data);
+
+      } catch(err) {
+        console.log(err);
+      }
+    })()
+  }, [location.pathname])
 
 
   if (!member) {
@@ -45,7 +44,7 @@ export const Member = () => {
           <PageTitle
             title={name}
             subtitle={role}
-            style={"02"}
+            pageStyle={"02"}
             pageTitle={memberPageInfo.pageTitlePicture}
           />
           <PageContent>

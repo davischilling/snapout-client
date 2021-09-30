@@ -105,7 +105,7 @@ export const Footer = ({
         </div>
     </div>
 
-    <a href="#" className="scroll-up">
+    <a href="/" className="scroll-up">
         <i className="fa fa-chevron-up"></i>
     </a>
   </div>
