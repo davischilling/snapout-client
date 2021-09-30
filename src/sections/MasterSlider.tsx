@@ -62,7 +62,7 @@ const MasterSlider = () => {
                 width: '100vw',
                 height: '100vh',
                 position: 'absolute',
-                opacity: '50%',
+                opacity: '55%',
                 backgroundPosition: 'center center',
                 backgroundRepeat: 'no-repeat'
               }}
@@ -75,8 +75,13 @@ const MasterSlider = () => {
               className="keen-slider__slide number-slide"
               style={{
                 backgroundImage: `url(${'img/slider/musician-music-band-slide-01.webp'})`,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                minWidth: '100vw',
                 height: '100vh',
-                width: '100vw',
+                backgroundPosition: 'center center',
+                backgroundRepeat: 'no-repeat'
               }}
             >
               <Fader
@@ -99,8 +104,13 @@ const MasterSlider = () => {
               className="keen-slider__slide number-slide"
               style={{
                 backgroundImage: `url(${'img/slider/musician-music-band-slide-02.webp'})`,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                minWidth: '100vw',
                 height: '100vh',
-                width: '100vw'
+                backgroundPosition: 'center center',
+                backgroundRepeat: 'no-repeat'
               }}
             >
               <Fader
@@ -123,8 +133,13 @@ const MasterSlider = () => {
               className="keen-slider__slide number-slide"
               style={{
                 backgroundImage: `url(${'img/slider/musician-music-band-slide-03.webp'})`,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                minWidth: '100vw',
                 height: '100vh',
-                width: '100vw'
+                backgroundPosition: 'center center',
+                backgroundRepeat: 'no-repeat'
               }}
             >
               <Fader

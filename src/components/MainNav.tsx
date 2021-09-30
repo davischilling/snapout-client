@@ -149,13 +149,6 @@ export const MainNav = ({
                         )
                     }
                 </div>
-        {/*
-                <div id="search">
-                    <form>
-                        <input className="search-submit" type="submit" />
-                        <input id="m_search" name="s" type="text" placeholder="Type and hit enter..." />
-                    </form>
-                </div> */}
                 {
                     menuActive && (
                         <MainNavLinks

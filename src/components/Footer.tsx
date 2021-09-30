@@ -68,29 +68,6 @@ export const Footer = ({
                             </ul>
                         )
                     }
-
-                    {/* <ul className="footer-widget-container">
-
-                        <li className="widget widget_text">
-                            <div className="textwidget">
-                                <a href="#newsletter-popup" className="btn btn-large btn-center newsletter-popup-trigger">
-                                    <span>{newsLetterPopupMessage}</span>
-                                </a>
-                            </div>
-
-                            <div id="newsletter-popup" className="mfp-hide">
-                                <h2>{newsLetterMessage}</h2>
-                                <div className="newsletter">
-                                    <form>
-                                        <input className="email" type="email" name="your-email" placeholder={emailPlaceholderText} />
-                                        <input className="submit" type="submit" value="Subscribe" />
-                                        <input name="action" type="hidden" />
-                                    </form>
-                                </div>
-                            </div>
-
-                        </li>
-                    </ul> */}
                 </div>
             </div>
         </div>
