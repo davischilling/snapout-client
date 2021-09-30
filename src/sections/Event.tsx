@@ -17,11 +17,11 @@ const EventSection = () => {
 
     useEffect(() => {
         if (data.sections.length > 0) {
-          data.sections.find(section => {
-            if (section.entityName === 'events') {
-              setSectionTitle(section.sectionTitle)
+            for (const section of data.sections) {
+                if (section.entityName === 'events') {
+                    setSectionTitle(section.sectionTitle)
+                }
             }
-          })
         }
     }, [data.sections])
 

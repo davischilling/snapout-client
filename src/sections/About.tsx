@@ -12,11 +12,11 @@ const AboutSection = () => {
 
   useEffect(() => {
     if (data.sections.length > 0) {
-      data.sections.find(section => {
+      for (const section of data.sections) {
         if (section.entityName === 'paragraphs') {
           setSectionTitle(section.sectionTitle)
+          }
         }
-      })
     }
   }, [data.sections])
 

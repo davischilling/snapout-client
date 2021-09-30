@@ -11,11 +11,6 @@ import api from '../services/api'
 export const Member = () => {
 
   const location = useLocation();
-  const [member, setMember] = useState<MemberType | undefined>()
-  useEffect(() => {
-    fetchMember()
-  }, [])
-
   const fetchMember = async () => {
     try {
       const id = location.pathname.split('-')[2]
@@ -27,6 +22,12 @@ export const Member = () => {
       console.log(err);
     }
   }
+
+  const [member, setMember] = useState<MemberType | undefined>()
+  useEffect(() => {
+    fetchMember()
+  }, [fetchMember])
+
 
   if (!member) {
     return (

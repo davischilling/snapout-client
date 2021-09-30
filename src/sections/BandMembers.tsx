@@ -12,11 +12,11 @@ const BandMembersSection = () => {
 
     useEffect(() => {
         if (data.sections.length > 0) {
-          data.sections.find(section => {
-            if (section.entityName === 'members') {
-              setSectionTitle(section.sectionTitle)
+            for (const section of data.sections) {
+                if (section.entityName === 'members') {
+                    setSectionTitle(section.sectionTitle)
+                }
             }
-          })
         }
     }, [data.sections])
 

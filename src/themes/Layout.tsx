@@ -14,10 +14,6 @@ const Layout = ({ children, menuActive }: LayoutProps) => {
 
     useEffect(() => {
         setIsMobile(isMobileScreen)
-    }, []);
-
-    useEffect(() => {
-        setIsMobile(isMobileScreen)
     }, [isMobileScreen]);
 
     return (

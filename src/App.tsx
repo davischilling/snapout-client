@@ -17,7 +17,7 @@ function App() {
 
   useEffect(() => {
     onRouteChange();
-  }, [location.pathname]);
+  }, [location.pathname, onRouteChange]);
 
   async function onRouteChange() {
     if (location.pathname === '/' && !menuActive) {
@@ -28,7 +28,7 @@ function App() {
   }
 
   return (
-    // <ErrorBoundary>
+    <ErrorBoundary>
         <AppProvider>
           <MenuProvider>
             <Layout menuActive={menuActive} >
@@ -36,7 +36,7 @@ function App() {
             </Layout>
           </MenuProvider>
         </AppProvider>
-    // </ErrorBoundary>
+    </ErrorBoundary>
   );
 }
 

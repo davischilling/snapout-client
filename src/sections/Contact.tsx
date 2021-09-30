@@ -11,11 +11,11 @@ const ContactSection = () => {
 
   useEffect(() => {
     if (data.sections.length > 0) {
-      data.sections.find(section => {
+      for (const section of data.sections) {
         if (section.entityName === 'contacts') {
           setSectionTitle(section.sectionTitle)
         }
-      })
+      }
     }
   }, [data.sections])
 

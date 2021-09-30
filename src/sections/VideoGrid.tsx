@@ -15,11 +15,11 @@ const VideoGridSection = () => {
 
     useEffect(() => {
         if (data.sections.length > 0) {
-          data.sections.find(section => {
-            if (section.entityName === 'medias') {
-              setSectionTitle(section.sectionTitle)
+            for (const section of data.sections) {
+                if (section.entityName === 'medias') {
+                    setSectionTitle(section.sectionTitle)
+                }
             }
-          })
         }
     }, [data.sections])
 
@@ -46,7 +46,11 @@ const VideoGridSection = () => {
         <div id="media">
             <br/>
             <br/>
-            <PageTitle title={sectionTitle ? sectionTitle : ''} style={"01"} pageTitle={"01"} />
+            <PageTitle
+                title={sectionTitle ? sectionTitle : ''}
+                style={"01"}
+                pageTitle={"01"}
+            />
             <PageContent>
             {
                 data.medias?.map(({

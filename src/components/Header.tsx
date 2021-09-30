@@ -15,7 +15,7 @@ export const Header = ({ menuActive }: props) => {
 
     useEffect(() => {
         setIsMobile(isMobileScreen)
-    }, []);
+    }, [isMobileScreen]);
 
     useEffect(() => {
         setIsMobile(isMobileScreen)
