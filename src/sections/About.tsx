@@ -1,43 +1,16 @@
-import React, { useContext, useEffect, useState } from 'react';
-import Loader from "react-loader-spinner";
+import React, { useContext, useState } from 'react';
 import {
   PageContent
 } from '../components';
 import { AppContext } from '../contexts/app-cotext';
 
-const AboutSection = () => {
+export const AboutSection = () => {
 
   const { data } = useContext(AppContext)
-  const [sectionTitle, setSectionTitle] = useState<string | undefined>(undefined)
-
-  useEffect(() => {
-    if (data.sections.length > 0) {
-      for (const section of data.sections) {
-        if (section.entityName === 'paragraphs') {
-          setSectionTitle(section.sectionTitle)
-          }
-        }
-    }
-  }, [data.sections])
-
-  if (Object.keys(data.paragraphs).length === 0) {
-      return <div id="aboutSnapOut">
-                  <br/>
-                  <br/>
-                  <br/>
-                  <br/>
-                  <PageContent>
-                      <div style={{ display: 'flex', justifyContent: 'center' }}>
-                      <Loader
-                          type="Puff"
-                          color="#e21f2f"
-                          height={80}
-                          width={80}
-                      />
-                      </div>
-                  </PageContent>
-              </div>
-  }
+  const section = data.sections.find(section => {
+    return section.entityName === 'paragraphs'
+  })
+  const [sectionTitle] = useState<string | undefined>(section?.sectionTitle)
 
   return (
     <div id="aboutSnapOut">
@@ -50,7 +23,7 @@ const AboutSection = () => {
         </div>
         <div className="col-md-8 centered">
           <div className="custom-heading-01 triggerAnimation animated" data-animate="fadeInUp">
-              <h2>{sectionTitle ? sectionTitle : ''}</h2>
+              <h2>{sectionTitle}</h2>
           </div>
           {
             data.paragraphs?.map(p => (
@@ -69,4 +42,4 @@ const AboutSection = () => {
   )
 }
 
-export default AboutSection
+// export default AboutSection

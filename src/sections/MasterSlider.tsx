@@ -4,7 +4,7 @@ import { MutableRefObject, useEffect, useRef, useState } from 'react';
 import { useMediaPredicate } from 'react-media-hook';
 import Fader from "../components/Fader";
 
-const MasterSlider = () => {
+export const MasterSlider = () => {
   const [pause, setPause] = useState(false)
   const [fadeOut, setFadeOut] = useState(true)
   const timer: MutableRefObject<any> = useRef()
@@ -164,5 +164,3 @@ const MasterSlider = () => {
     </div>
   )
 }
-
-export default MasterSlider

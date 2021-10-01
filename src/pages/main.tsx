@@ -1,21 +1,41 @@
-import React, { lazy, Suspense  } from 'react'
+import React, { useContext } from 'react';
+import Loader from "react-loader-spinner";
+import { PageContent } from '../components';
+import { AppContext } from '../contexts';
+import {
+  AboutSection,
+  BandMembersSection, ContactSection, EventSection, MasterSlider, VideoGridSection
+} from '../sections';
 
-const MasterSlider = lazy(() => import('../sections/MasterSlider'));
-const AboutSection = lazy(() => import('../sections/About'));
-const BandMembersSection = lazy(() => import('../sections/BandMembers'));
-const EventSection = lazy(() => import('../sections/Event'));
-const VideoGridSection = lazy(() => import('../sections/VideoGrid'));
-const ContactSection = lazy(() => import('../sections/Contact'));
 
-const renderLoader = () => <p>Loading</p>;
+export const Main = () => {
+  const { loading } = useContext(AppContext)
 
-export const Main = () => (
-  <Suspense fallback={renderLoader()}>
-    <MasterSlider />
-    <AboutSection />
-    <BandMembersSection />
-    <EventSection />
-    <VideoGridSection />
-    <ContactSection />
-  </Suspense>
-)
+  return (
+    <>
+      <MasterSlider />
+      {
+        loading === false ? (
+          <>
+            <AboutSection />
+            <BandMembersSection />
+            <EventSection />
+            <VideoGridSection />
+            <ContactSection />
+          </>
+        ) : (
+          <PageContent>
+            <div style={{ display: 'flex', justifyContent: 'center' }}>
+              <Loader
+                  type="Puff"
+                  color="#e21f2f"
+                  height={80}
+                  width={80}
+              />
+            </div>
+          </PageContent>
+        )
+      }
+    </>
+  )
+}

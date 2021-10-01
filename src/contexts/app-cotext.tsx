@@ -49,6 +49,7 @@ export const AppProvider = ({children}: AppProviderProps) => {
             [key]: response[index]
           }))
         })
+        setLoading(false)
       } catch(err) {
         console.log(err);
       }
@@ -57,8 +58,8 @@ export const AppProvider = ({children}: AppProviderProps) => {
     const dataKeys = Object.keys(data)
     dataKeys.forEach(key => promiseArray.push(api.get(key)))
     fetchData(promiseArray, dataKeys)
-    setLoading(false)
-  }, [data])
+    // eslint-disable-next-line
+  }, [])
 
   return (
     <AppContext.Provider

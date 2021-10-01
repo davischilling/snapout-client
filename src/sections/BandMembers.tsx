@@ -1,43 +1,16 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useState } from 'react';
 import {
-  PageContent, TeamMember
-} from '../components'
-import Loader from "react-loader-spinner";
-import { AppContext } from '../contexts/app-cotext'
+    PageContent, TeamMember
+} from '../components';
+import { AppContext } from '../contexts/app-cotext';
 
-const BandMembersSection = () => {
+export const BandMembersSection = () => {
 
     const { data } = useContext(AppContext)
-    const [sectionTitle, setSectionTitle] = useState<string | undefined>(undefined)
-
-    useEffect(() => {
-        if (data.sections.length > 0) {
-            for (const section of data.sections) {
-                if (section.entityName === 'members') {
-                    setSectionTitle(section.sectionTitle)
-                }
-            }
-        }
-    }, [data.sections])
-
-    if (Object.keys(data.members).length === 0) {
-        return <div id="members">
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <PageContent>
-                        <div style={{ display: 'flex', justifyContent: 'center' }}>
-                        <Loader
-                            type="Puff"
-                            color="#e21f2f"
-                            height={80}
-                            width={80}
-                        />
-                        </div>
-                    </PageContent>
-                </div>
-    }
+    const section = data.sections.find(section => {
+        return section.entityName === 'members'
+      })
+      const [sectionTitle] = useState<string | undefined>(section?.sectionTitle)
 
     return (
         <div id="members">
@@ -48,7 +21,7 @@ const BandMembersSection = () => {
             <PageContent>
                 <div className="col-md-12 centered clearfix mb-0">
                     <div className="custom-heading-01 triggerAnimation animated" data-animate="fadeInUp">
-                        <h2>{sectionTitle ? sectionTitle : ''}</h2>
+                        <h2>{sectionTitle}</h2>
                     </div>
                 </div>
                 {
@@ -63,5 +36,3 @@ const BandMembersSection = () => {
         </div>
     )
 }
-
-export default BandMembersSection

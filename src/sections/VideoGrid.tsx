@@ -1,53 +1,26 @@
-import React, { useContext, useEffect, useState } from 'react'
-import Loader from 'react-loader-spinner'
+import React, { useContext, useState } from 'react'
+import { ReactYouTubeLite } from 'react-youtube-lite'
 import {
-  PageContent, PageTitle
+    PageContent, PageTitle
 } from '../components'
 import { AppContext } from '../contexts/app-cotext'
 import { MediaType } from '../interfaces'
 
-import { ReactYouTubeLite } from 'react-youtube-lite';
 
-const VideoGridSection = () => {
+export const VideoGridSection = () => {
 
     const { data } = useContext(AppContext)
-    const [sectionTitle, setSectionTitle] = useState<string | undefined>(undefined)
-
-    useEffect(() => {
-        if (data.sections.length > 0) {
-            for (const section of data.sections) {
-                if (section.entityName === 'medias') {
-                    setSectionTitle(section.sectionTitle)
-                }
-            }
-        }
-    }, [data.sections])
-
-    if (Object.keys(data.medias).length === 0) {
-        return <div id="media">
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <PageContent>
-                        <div style={{ display: 'flex', justifyContent: 'center' }}>
-                        <Loader
-                            type="Puff"
-                            color="#e21f2f"
-                            height={80}
-                            width={80}
-                        />
-                        </div>
-                    </PageContent>
-                </div>
-    }
+    const section = data.sections.find(section => {
+        return section.entityName === 'medias'
+      })
+      const [sectionTitle] = useState<string | undefined>(section?.sectionTitle)
 
     return (
         <div id="media">
             <br/>
             <br/>
             <PageTitle
-                title={sectionTitle ? sectionTitle : ''}
+                title={sectionTitle ?? ''}
                 pageStyle={"01"}
                 pageTitle={"01"}
             />
@@ -80,5 +53,3 @@ const VideoGridSection = () => {
         </div>
     )
 }
-
-export default VideoGridSection

@@ -1,48 +1,20 @@
-import React, { useContext, useEffect, useState } from 'react'
-import Loader from 'react-loader-spinner'
+import React, { useContext, useState } from 'react'
 import {
-  // PageBtn,
-  PageContent,
-  SectionTitle,
-  Event,
-  CustomBackground
+    CustomBackground, Event,
+    // PageBtn,
+    PageContent,
+    SectionTitle
 } from '../components'
 import { AppContext } from '../contexts/app-cotext'
 import { EventType } from '../interfaces'
 
-const EventSection = () => {
+export const EventSection = () => {
 
     const { data } = useContext(AppContext)
-    const [sectionTitle, setSectionTitle] = useState<string | undefined>(undefined)
-
-    useEffect(() => {
-        if (data.sections.length > 0) {
-            for (const section of data.sections) {
-                if (section.entityName === 'events') {
-                    setSectionTitle(section.sectionTitle)
-                }
-            }
-        }
-    }, [data.sections])
-
-    if (Object.keys(data.events).length === 0) {
-        return <div id="events">
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <PageContent>
-                        <div style={{ display: 'flex', justifyContent: 'center' }}>
-                        <Loader
-                            type="Puff"
-                            color="#e21f2f"
-                            height={80}
-                            width={80}
-                        />
-                        </div>
-                    </PageContent>
-                </div>
-    }
+    const section = data.sections.find(section => {
+        return section.entityName === 'events'
+      })
+      const [sectionTitle] = useState<string | undefined>(section?.sectionTitle)
 
     return (
         <div id="events">
@@ -52,7 +24,7 @@ const EventSection = () => {
             rowClasses={"mb-80"}
             // pageBtn={<PageBtn url={"#"} text={"View all dates"} />}
             >
-            <SectionTitle title={sectionTitle ? sectionTitle : ''} />
+            <SectionTitle title={sectionTitle ?? ''} />
             <div className="col-md-12">
                 <div className="pi-events events-style-02">
                     {
@@ -84,5 +56,3 @@ const EventSection = () => {
         </div>
     )
 }
-
-export default EventSection
