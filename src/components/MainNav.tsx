@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { bubble as Menu } from 'react-burger-menu';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { MainNavLinks } from "./MainNavLinks";
+import { useLocation } from 'react-router-dom'
 
 type props = {
   logoUrl: string
@@ -21,6 +22,7 @@ export const MainNav = ({
     const toggleMobileMenu = () => {
         setMobileMenu(!mobileMenu)
     }
+    const location = useLocation();
 
     return (
         <div className="main-nav">
@@ -43,7 +45,7 @@ export const MainNav = ({
                     {/* <button className="hamburger navbar-toggle hamburger--slider-r" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="false"> */}
 
                     {
-                        menuActive && isMobile && (
+                        !location.key && isMobile && (
                             <Menu
                                 right
                                 width={'60vw'}
