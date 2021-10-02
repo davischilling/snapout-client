@@ -29,3 +29,4 @@ src/services/data.json
 .github
 .firebaserc
 firebase.json
+.firebase
