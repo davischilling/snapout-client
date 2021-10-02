@@ -25,3 +25,7 @@ yarn-error.log*
 src/services/data.json
 .env.development
 .env.production
+
+.github
+.firebaserc
+firebase.json

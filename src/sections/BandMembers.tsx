@@ -4,7 +4,7 @@ import {
 } from '../components';
 import { AppContext } from '../contexts/app-cotext';
 
-export const BandMembersSection = () => {
+export const BandMembersSection = React.memo(() => {
 
     const { data } = useContext(AppContext)
     const section = data.sections.find(section => {
@@ -35,4 +35,4 @@ export const BandMembersSection = () => {
             </PageContent>
         </div>
     )
-}
+})

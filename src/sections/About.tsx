@@ -4,7 +4,7 @@ import {
 } from '../components';
 import { AppContext } from '../contexts/app-cotext';
 
-export const AboutSection = () => {
+export const AboutSection = React.memo(() => {
 
   const { data } = useContext(AppContext)
   const section = data.sections.find(section => {
@@ -40,6 +40,6 @@ export const AboutSection = () => {
       </PageContent>
     </div>
   )
-}
+})
 
 // export default AboutSection

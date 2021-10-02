@@ -34,30 +34,29 @@ export const AppProvider = ({children}: AppProviderProps) => {
     members: [],
   })
 
+  const fetchData = async (promiseArray: Promise<AxiosResponse<any>>[], dataKeys: string[]) => {
+    const response = await Promise.all(promiseArray).then(responses => {
+      return responses.map(response => {
+        const { data } = response
+        return data.data
+      })
+    })
+    dataKeys.forEach((key, index) => {
+      setData(prevState => ({
+        ...prevState,
+        [key]: response[index]
+      }))
+    })
+    setLoading(false)
+  }
+
   useEffect(() => {
-    const fetchData = async (promiseArray: Promise<AxiosResponse<any>>[], dataKeys: string[]) => {
-      try {
-        const response = await Promise.all(promiseArray).then(responses => {
-          return responses.map(response => {
-            const { data } = response
-            return data.data
-          })
-        })
-        dataKeys.forEach((key, index) => {
-          setData(prevState => ({
-            ...prevState,
-            [key]: response[index]
-          }))
-        })
-        setLoading(false)
-      } catch(err) {
-        console.log(err);
-      }
+    if (loading === true) {
+      let promiseArray: any[] = []
+      const dataKeys = Object.keys(data)
+      dataKeys.forEach(key => promiseArray.push(api.get(key)))
+      fetchData(promiseArray, dataKeys)
     }
-    let promiseArray: any[] = []
-    const dataKeys = Object.keys(data)
-    dataKeys.forEach(key => promiseArray.push(api.get(key)))
-    fetchData(promiseArray, dataKeys)
     // eslint-disable-next-line
   }, [])
 

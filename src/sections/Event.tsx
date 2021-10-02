@@ -8,7 +8,7 @@ import {
 import { AppContext } from '../contexts/app-cotext'
 import { EventType } from '../interfaces'
 
-export const EventSection = () => {
+export const EventSection = React.memo(() => {
 
     const { data } = useContext(AppContext)
     const section = data.sections.find(section => {
@@ -55,4 +55,4 @@ export const EventSection = () => {
             </PageContent>
         </div>
     )
-}
+})

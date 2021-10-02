@@ -1,10 +1,11 @@
+import React from 'react'
 import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from 'keen-slider/react';
 import { MutableRefObject, useEffect, useRef, useState } from 'react';
 import { useMediaPredicate } from 'react-media-hook';
 import Fader from "../components/Fader";
 
-export const MasterSlider = () => {
+export const MasterSlider = React.memo(() => {
   const [pause, setPause] = useState(false)
   const [fadeOut, setFadeOut] = useState(true)
   const timer: MutableRefObject<any> = useRef()
@@ -163,4 +164,4 @@ export const MasterSlider = () => {
       }
     </div>
   )
-}
+})

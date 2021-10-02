@@ -7,8 +7,7 @@ import { AppContext } from '../contexts/app-cotext'
 import { MediaType } from '../interfaces'
 
 
-export const VideoGridSection = () => {
-
+export const VideoGridSection = React.memo(() => {
     const { data } = useContext(AppContext)
     const section = data.sections.find(section => {
         return section.entityName === 'medias'
@@ -52,4 +51,4 @@ export const VideoGridSection = () => {
             </PageContent>
         </div>
     )
-}
+})

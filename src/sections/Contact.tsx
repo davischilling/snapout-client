@@ -3,8 +3,7 @@ import { CustomBackground, PageContent } from '../components'
 import { AppContext } from '../contexts/app-cotext'
 import { ContactType } from '../interfaces'
 
-export const ContactSection = () => {
-
+export const ContactSection = React.memo(() => {
   const { data } = useContext(AppContext)
   const section = data.sections.find(section => {
     return section.entityName === 'contacts'
@@ -37,4 +36,4 @@ export const ContactSection = () => {
       </PageContent>
     </div>
   )
-}
+})
