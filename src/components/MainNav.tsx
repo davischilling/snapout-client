@@ -18,11 +18,7 @@ export const MainNav = ({
   isMobile
 }: props) => {
     // const {menuOpen, toggleMenuOpen} = useContext(MenuContext)
-
     const location = useLocation();
-    console.log(location.pathname);
-
-
     const [mobileMenu, setMobileMenu] = useState(false)
     const toggleMobileMenu = () => {
         setMobileMenu(!mobileMenu)
