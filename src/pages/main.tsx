@@ -25,7 +25,7 @@ export const Main = () => {
           </>
         ) : (
           <PageContent>
-            <div style={{ display: 'flex', justifyContent: 'center' }}>
+            <div style={{ display: 'flex', justifyContent: 'center', marginTop: 50 }}>
               <Loader
                   type="Puff"
                   color="#e21f2f"
