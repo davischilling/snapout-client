@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { bubble as Menu } from 'react-burger-menu';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { MainNavLinks } from "./MainNavLinks";
+import { useLocation } from 'react-router-dom'
 
 type props = {
   logoUrl: string
@@ -17,6 +18,8 @@ export const MainNav = ({
   isMobile
 }: props) => {
     // const {menuOpen, toggleMenuOpen} = useContext(MenuContext)
+
+  const location = useLocation();
 
     const [mobileMenu, setMobileMenu] = useState(false)
     const toggleMobileMenu = () => {
@@ -44,7 +47,7 @@ export const MainNav = ({
                     {/* <button className="hamburger navbar-toggle hamburger--slider-r" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="false"> */}
 
                     {
-                        isMobile && (
+                        isMobile && location.pathname !== '/' && (
                             <Menu
                                 right
                                 width={'60vw'}
@@ -141,11 +144,6 @@ export const MainNav = ({
                                     {/* <a onClick={ showSettings } className="menu-item--small" href="">Settings</a> */}
                                 </div>
                             </Menu>
-                            // <button className={`hamburger new-navbar-toggle hamburger--slider-r ${menuOpen ? 'is-active' : 'collapsed'}`} type="button" data-target="#main-nav" aria-expanded={menuOpen}>
-                            //     <span className="hamburger-box" onClick={toggleMenuOpen}>
-                            //         <span className="hamburger-inner"></span>
-                            //     </span>
-                            // </button>
                         )
                     }
                 </div>
